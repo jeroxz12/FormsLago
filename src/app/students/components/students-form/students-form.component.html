@@ -1,0 +1,36 @@
+    <form [formGroup]="addStudentForm" (ngSubmit)="submitForm()">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" [ngClass]="{'form-control' : true, 'is-invalid' : addStudentForm.get('nombre')?.errors && addStudentForm.get('nombre')?.touched}" name="nombre"
+                placeholder="Ingresa el nombre del estudiante" formControlName="nombre">
+                <span *ngIf="addStudentForm.get('nombre')?.errors?.['required'] && addStudentForm.get('nombre')?.touched" class="badge bg-danger" style="width:100%">El campo nombre es requerido</span>
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" [ngClass]="{'form-control' : true, 'is-invalid' : addStudentForm.get('apellido')?.errors && addStudentForm.get('apellido')?.touched}" name="apellido"
+                placeholder="Ingresa el apellido del estudiante" formControlName="apellido">
+                <span *ngIf="addStudentForm.get('apellido')?.errors?.['required'] && addStudentForm.get('apellido')?.touched" class="badge bg-danger" style="width:100%">El campo apellido es requerido</span>
+        </div>
+        <div class="mb-3">
+            <label for="dni" class="form-label">DNI:</label>
+            <input type="text" class="form-control" id="dni" name="dni"
+                placeholder="Ingresa el dni del estudiante" [ngClass]="{'form-control' : true, 'is-invalid' : addStudentForm.get('dni')?.errors && addStudentForm.get('dni')?.touched}" formControlName="dni">
+                <span *ngIf="addStudentForm.get('dni')?.errors?.['required'] && addStudentForm.get('dni')?.touched" class="badge bg-danger" style="width:100%">El campo dni es requerido</span>
+                <span *ngIf="addStudentForm.get('dni')?.errors?.['errorNumero'] && addStudentForm.get('dni')?.touched" class="badge bg-danger" style="width:100%">El campo dni debe ser un numero</span>
+            </div>
+        <div class="mb-3">
+            <label for="legajo" class="form-label">Legajo:</label>
+            <input type="text" class="form-control" [ngClass]="{'form-control' : true, 'is-invalid' : addStudentForm.get('legajo')?.errors && addStudentForm.get('legajo')?.touched}"  id="legajo" name="legajo" placeholder="Ingresa el legajo del estudiante" formControlName="legajo">
+            <span *ngIf="addStudentForm.get('legajo')?.errors?.['required'] && addStudentForm.get('legajo')?.touched" class="badge bg-danger" style="width:100%">El campo legajo es requerido</span>
+            <span *ngIf="addStudentForm.get('legajo')?.errors?.['errorNumero'] && addStudentForm.get('legajo')?.touched" class="badge bg-danger" style="width:100%">El campo legajo debe ser un numero</span>
+
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Telefono:</label>
+            <input type="text" class="form-control" [ngClass]="{'form-control' : true, 'is-invalid' : addStudentForm.get('telefono')?.errors && addStudentForm.get('telefono')?.touched}"  id="telefono" name="telefono" placeholder="Ingresa el telefono del estudiante" formControlName="telefono">
+            <span *ngIf="addStudentForm.get('telefono')?.errors?.['required'] && addStudentForm.get('telefono')?.touched" class="badge bg-danger" style="width:100%">El campo telefono es requerido</span>
+            <span *ngIf="addStudentForm.get('telefono')?.errors?.['errorNumero'] && addStudentForm.get('telefono')?.touched" class="badge bg-danger" style="width:100%">El campo telefono debe ser un numero</span>
+
+          </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!addStudentForm.valid">Agregar</button>
+    </form>

@@ -1,0 +1,20 @@
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Legajo</th>
+            <th scope="col">Telefono</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{ student.nombre }}</td>
+                <td>{{ student.apellido }}</td>
+                <td>{{ student.dni }}</td>
+                <td>{{ student.legajo }}</td>
+                <td>{{ student.telefono }}</td>
+            </tr>
+        </tbody>
+    </table>

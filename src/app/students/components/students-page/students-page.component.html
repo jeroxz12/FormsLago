@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="container-fluid mt-5">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <app-students-form (addStudent)="addStudent($event)"></app-students-form>
+        </div>
+       <div class="col-lg-8">
+        <app-students-list [students]="students"></app-students-list>
+       </div>
+       
+    </div>
+</div>
